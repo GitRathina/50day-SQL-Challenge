@@ -1,0 +1,50 @@
+select  empid, name, salary from employee
+order by salary desc 
+limit 1 offset 1
+
+-- window function - dense_rank
+
+select * from (
+
+select *,
+
+dense_rank()over( order by salary desc) denserank
+
+from employee
+
+)  as subquery
+
+where denserank = 2
+---
+
+
+
+INSERT INTO EMPLOYEE(empId,name,dept,salary) VALUES (25, 'Robert', 'Accounting',9500);
+
+
+
+
+
+
+select dept, name, salary from employee order by dept asc,salary desc 
+
+
+
+select dept, name, salary, dense_rank()over (order by dept asc,salary desc ) drn from employee
+
+
+select empId,name,dept,salary from 
+(select *,rank() over (order by salary desc) as rnk from employee) as subquery
+where rnk=2;
+
+
+with cte as (
+select *,
+dense_rank() over(partition by dept  order by salary desc) as rnk
+from employee
+)
+select * from cte 
+where rnk =1 ;
+
+
+
