@@ -1,0 +1,54 @@
+
+
+-- Create Orders table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    OrderDate DATE,
+    TotalSales DECIMAL(10,2)
+);
+
+-- Insert data into Orders
+INSERT INTO Orders (OrderID, OrderDate, TotalSales) VALUES
+(1001, '2026-01-05', 1200.00),
+(1002, '2026-01-08', 850.00),
+(1003, '2026-01-12', 2450.00),
+(1004, '2026-01-15', 670.00),
+(1005, '2026-01-20', 1800.00),
+(1006, '2026-02-02', 950.00),
+(1007, '2026-02-05', 3200.00),
+(1008, '2026-02-10', 1450.00),
+(1009, '2026-02-14', 780.00),
+(1010, '2026-02-18', 2100.00),
+(1011, '2026-03-01', 1650.00),
+(1012, '2026-03-05', 980.00),
+(1013, '2026-03-10', 2750.00),
+(1014, '2026-03-15', 1100.00),
+(1015, '2026-03-20', 3400.00);
+
+
+-- Create Returns table
+CREATE TABLE Returns (
+    ReturnID INT PRIMARY KEY,
+    OrderID INT,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+-- Insert data into Returns
+INSERT INTO Returns (ReturnID, OrderID) VALUES
+(1, 1001),
+(2, 1003),
+(3, 1005),
+(4, 1007),
+(5, 1008),
+(6, 1010),
+(7, 1011),
+(8, 1013);
+
+select * from orders;
+select * from returns;
+
+
+select (extract(month from orderdate)) as month, count(a.orderid)  
+from returns a left join orders b on a. orderid = b.orderid 
+group by month
+order by month asc;
