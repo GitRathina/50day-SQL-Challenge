@@ -1,58 +1,133 @@
--- 06/50 Days SQL Challenge
-
-
-DROP TABLE IF EXISTS customers;
-CREATE TABLE customers (
-    customer_id INT,
-    name VARCHAR(100),
-    email VARCHAR(100)
+CREATE TABLE Employees2 (
+    EmployeeID INT,
+    EmployeeName VARCHAR(100),
+    Department VARCHAR(50),
+    Salary INT,
+    City VARCHAR(50)
 );
 
+INSERT INTO Employees2 (EmployeeID, EmployeeName, Department, Salary, City)
+VALUES
+-- Arun Kumar - 1 occurrence
+(1, 'Arun Kumar', 'IT', 65000, 'Chennai'),
 
-DROP TABLE IF EXISTS orders;
-CREATE TABLE orders (
-    order_id INT ,
-    customer_id INT,
-    order_date DATE,
-    amount DECIMAL(10, 2)
-);
+-- Priya Sharma - 3 occurrences
+(2, 'Priya Sharma', 'HR', 55000, 'Bangalore'),
+(3, 'Priya Sharma', 'HR', 55000, 'Bangalore'),
+(4, 'Priya Sharma', 'HR', 55000, 'Bangalore'),
+
+-- Ravi Kumar - 6 occurrences
+(5, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+(6, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+(7, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+(8, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+(9, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+(10, 'Ravi Kumar', 'Finance', 60000, 'Chennai'),
+
+-- Meena Raj - 4 occurrences
+(11, 'Meena Raj', 'IT', 70000, 'Coimbatore'),
+(12, 'Meena Raj', 'IT', 70000, 'Coimbatore'),
+(13, 'Meena Raj', 'IT', 70000, 'Coimbatore'),
+(14, 'Meena Raj', 'IT', 70000, 'Coimbatore'),
+
+-- Suresh Babu - 1 occurrence
+(15, 'Suresh Babu', 'Sales', 50000, 'Madurai'),
+
+-- Kavya Singh - 6 occurrences
+(16, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+(17, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+(18, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+(19, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+(20, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+(21, 'Kavya Singh', 'HR', 58000, 'Bangalore'),
+
+-- Vijay Anand - 3 occurrences
+(22, 'Vijay Anand', 'Sales', 52000, 'Chennai'),
+(23, 'Vijay Anand', 'Sales', 52000, 'Chennai'),
+(24, 'Vijay Anand', 'Sales', 52000, 'Chennai'),
+
+-- Divya Mohan - 1 occurrence
+(25, 'Divya Mohan', 'IT', 68000, 'Bangalore'),
+
+-- Rahul Das - 4 occurrences
+(26, 'Rahul Das', 'Finance', 62000, 'Chennai'),
+(27, 'Rahul Das', 'Finance', 62000, 'Chennai'),
+(28, 'Rahul Das', 'Finance', 62000, 'Chennai'),
+(29, 'Rahul Das', 'Finance', 62000, 'Chennai'),
+
+-- Sanjay Rao - 6 occurrences
+(30, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+(31, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+(32, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+(33, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+(34, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+(35, 'Sanjay Rao', 'IT', 72000, 'Hyderabad'),
+
+-- Anitha Devi - 3 occurrences
+(36, 'Anitha Devi', 'HR', 56000, 'Chennai'),
+(37, 'Anitha Devi', 'HR', 56000, 'Chennai'),
+(38, 'Anitha Devi', 'HR', 56000, 'Chennai'),
+
+-- Karthik Raj - 4 occurrences
+(39, 'Karthik Raj', 'Sales', 54000, 'Coimbatore'),
+(40, 'Karthik Raj', 'Sales', 54000, 'Coimbatore'),
+(41, 'Karthik Raj', 'Sales', 54000, 'Coimbatore'),
+(42, 'Karthik Raj', 'Sales', 54000, 'Coimbatore'),
+
+-- Lakshmi Priya - 1 occurrence
+(43, 'Lakshmi Priya', 'Finance', 61000, 'Madurai'),
+
+-- Naveen Kumar - 6 occurrences
+(44, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+(45, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+(46, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+(47, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+(48, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+(49, 'Naveen Kumar', 'IT', 69000, 'Chennai'),
+
+-- Swetha Rani - 3 occurrences
+(50, 'Swetha Rani', 'HR', 57000, 'Bangalore'),
+(51, 'Swetha Rani', 'HR', 57000, 'Bangalore'),
+(52, 'Swetha Rani', 'HR', 57000, 'Bangalore'),
+
+-- Prakash Menon - 4 occurrences
+(53, 'Prakash Menon', 'Finance', 63000, 'Chennai'),
+(54, 'Prakash Menon', 'Finance', 63000, 'Chennai'),
+(55, 'Prakash Menon', 'Finance', 63000, 'Chennai'),
+(56, 'Prakash Menon', 'Finance', 63000, 'Chennai'),
+
+-- Deepa Kumar - 1 occurrence
+(57, 'Deepa Kumar', 'Sales', 51000, 'Madurai'),
+
+-- Mohan Raj - 6 occurrences
+(58, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+(59, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+(60, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+(61, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+(62, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+(63, 'Mohan Raj', 'IT', 71000, 'Coimbatore'),
+
+-- Geetha Lakshmi - 3 occurrences
+(64, 'Geetha Lakshmi', 'HR', 59000, 'Chennai'),
+(65, 'Geetha Lakshmi', 'HR', 59000, 'Chennai'),
+(66, 'Geetha Lakshmi', 'HR', 59000, 'Chennai'),
+
+-- Hari Prasad - 4 occurrences
+(67, 'Hari Prasad', 'Sales', 53000, 'Bangalore'),
+(68, 'Hari Prasad', 'Sales', 53000, 'Bangalore'),
+(69, 'Hari Prasad', 'Sales', 53000, 'Bangalore'),
+(70, 'Hari Prasad', 'Sales', 53000, 'Bangalore');
 
 
+select distinct employeename from employees2 where
+employeename in (
+select employeename
+from employees2
+group by employeename
+having count(1)> 1)
 
--- Inserting sample customers
-INSERT INTO customers (customer_id, name, email) VALUES
-(1, 'John Doe', 'john@example.com'),
-(2, 'Jane Smith', 'jane@example.com'),
-(3, 'Alice Johnson', 'alice@example.com'),
-(4, 'Sam B', 'sb@example.com'),
-(5, 'John Smith', 'j@example.com')	
-;
-
--- Inserting sample orders
-INSERT INTO orders (order_id, customer_id, order_date, amount) VALUES
-(1, 1, '2024-03-05', 50.00),
-(2, 2, '2024-03-10', 75.00),
-(5, 4, '2024-04-02', 45.00),
-(5, 2, '2024-04-02', 45.00)	,
-(3, 4, '2024-04-15', 100.00),
-(4, 1, '2024-04-01', 60.00),
-(5, 5, '2024-04-02', 45.00);
-
-
-
-
-
-
-
-/*
-Given tables customers (columns: customer_id, 
-name, email) and orders (columns: order_id, 
-customer_id, order_date, amount), 
-
-Write an SQL query to find customers who 
-haven't made any purchases in the last month, 
-assuming today's date is April 2, 2024. 
-*/
-
--- customers details 
--- who has not done purchase in last month (orders)
+select * from (
+select *,
+row_number() over (partition by employeename order by employeename) as rn
+from employees2
+) where rn >2
