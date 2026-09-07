@@ -52,3 +52,31 @@ and price of these products.
 
 SELECT * FROM products;
 SELECT * FROM sales;
+My approach - incorrect:
+
+WITH products_sold as(
+select p.product_id, p.Product_name,p.price,
+EXTRACT (YEAR from (s.sale_date)) as year ,
+EXTRACT (MONTH from s.sale_date) as month,
+EXTRACT(MONTH from CURRENT_DATE) as current_month
+from Products p 
+left outer join Sales s 
+on p.product_id = s.product_id 
+where EXTRACT (MONTH from s.sale_date) >= (EXTRACT(MONTH from CURRENT_DATE)-6))
+
+select 
+AND EXTRACT (YEAR from (s.sale_date))  = 2023
+
+Correct one
+
+
+select p.*
+from Products p 
+left outer join Sales s 
+on p.product_id = s.product_id 
+where s.sale_date is null or s.sale_date < Current_date -interval '36 months'
+
+
+
+
+
